@@ -1,0 +1,13 @@
+<h1>welcome#index</h1>
+
+Hello [% $name %]
+
+<ul>
+   
+   [% foreach $namen as $name %]
+
+   <li>[% $name.name %] ([% $name.id %])</li>
+
+   [% /foreach %]
+
+</ul>
