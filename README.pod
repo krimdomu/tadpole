@@ -1,0 +1,10 @@
+=pod
+
+=head2 Tadpole is a minimalistic MVC Framework for PHP
+
+It is build with simplicity in mind so the learning curve is not steep. You just need to know the theory of Models, Views and Controllers. There is no build in ORM. Tadpole uses MDB2 for database access, but it's easy to use other modules. For the templates Tadpole uses Smarty.
+
+=head2 Usage
+
+
+

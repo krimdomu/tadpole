@@ -1,2 +1,3 @@
 lib/PEAR
 lib/Smarty
+*.sw*

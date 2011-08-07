@@ -14,6 +14,8 @@ class Tadpole {
    protected $_model;
 
    public $router;
+
+   public static $VERSION = "0.0001";
    
    /**
     * Der Konstruktor
