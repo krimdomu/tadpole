@@ -1,6 +1,6 @@
 <?php
 
-require_once(dirname(__FILE__) . "/Tadpole.php");
+require_once("Tadpole.php");
 
 class View {
 

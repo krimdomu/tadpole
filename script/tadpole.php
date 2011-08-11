@@ -2,7 +2,7 @@
 
 // Simple management Script
 
-ini_set("include_path", "./lib:.:" . "./lib/PEAR" );
+ini_set("include_path", "./lib:.:" . "./lib/PEAR" . ":./lib/Smarty/libs" );
 require_once("lib/Tadpole.php");
 
 function help() {
@@ -147,7 +147,7 @@ function get_template($tpl) {
 <?php
 
 chdir("..");
-ini_set("include_path", "./lib:.:" . "./lib/PEAR" );
+ini_set("include_path", "./lib:.:" . "./lib/PEAR" . ":./lib/Smarty/libs" );
 
 require_once("lib/Tadpole.php");
 require_once("app/{app_class}.php");

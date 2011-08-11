@@ -5,7 +5,7 @@ require_once("controller.php");
 require_once("model.php");
 require_once("view.php");
 require_once("response.php");
-require_once("Smarty/libs/Smarty.class.php");
+require_once("Smarty.class.php");
 
 class Tadpole {
 
