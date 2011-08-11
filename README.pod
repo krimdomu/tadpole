@@ -19,3 +19,10 @@ And run
 
 This will create all the needed skeleton files.
 
+See the file app/Yourproject.php to define routes and database connection.
+
+See the files app/controller/*.php as an example for your controllers
+
+See the files app/view/* for the templates
+
+
