@@ -31,6 +31,12 @@ if($argv[1] == "create") {
    mkdir("app/view");
    mkdir("app/view/layouts");
    mkdir("app/view/welcome");
+   mkdir("public");
+   mkdir("public/css");
+   mkdir("public/js");
+   mkdir("tmp");
+   mkdir("tmp/cache");
+   mkdir("tmp/template_c");
 
    $app_class = ucfirst(strtolower($name));
 
@@ -42,7 +48,7 @@ if($argv[1] == "create") {
       $app_class
    );
 
-   file_put_contents("index.php", parse_template(
+   file_put_contents("public/index.php", parse_template(
       $search,
       $replace,
       "index.php"
@@ -78,6 +84,25 @@ if($argv[1] == "create") {
       "welcome_index"
    ));
 
+   file_put_contents("public/.htaccess", parse_template(
+      $search,
+      $replace,
+      ".htaccess"
+   ));
+
+   file_put_contents("public/css/master.css", parse_template(
+      $search,
+      $replace,
+      "master.css"
+   ));
+
+
+   print "Project created.\n\n";
+   print "Now point your DocumentRoot to the public folder of your new project.";
+   print "And enable parsing of .htaccess files and mod_rewrite.\n";
+   print "------\n";
+   print "If you have questions just join irc.freenode.net #tadpole\n";
+   print "------\n";
 
 }
 
@@ -121,6 +146,7 @@ function get_template($tpl) {
 @index.php
 <?php
 
+chdir("..");
 ini_set("include_path", "./lib:.:" . "./lib/PEAR" );
 
 require_once("lib/Tadpole.php");
@@ -208,6 +234,21 @@ class WelcomeController extends ApplicationController {
 <h1>welcome#index</h1>
 
 Hello [% $name %]
+@end
+
+@.htaccess
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php [L]
+
+@end
+
+@master.css
+*, html {
+   margin: 10;
+   padding: 10;
+}
 @end
 
 */
