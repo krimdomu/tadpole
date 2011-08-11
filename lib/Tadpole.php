@@ -35,7 +35,9 @@ class Tadpole {
    }
 
    public function db() {
-      return $this->_model->db();
+      if($this->_mode) {
+         return $this->_model->db();
+      }
    }
 
    public function run() {
